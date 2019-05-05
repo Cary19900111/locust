@@ -4,7 +4,7 @@ import gevent
 from gevent import sleep
 from gevent.queue import Queue
 
-import mock
+# import mock
 from locust import events
 from locust.core import Locust, TaskSet, task
 from locust.exception import LocustError
@@ -342,9 +342,22 @@ class TestMasterRunner(LocustTestCase):
 
 
 class TestMessageSerializing(unittest.TestCase):
-    def test_message_serialize(self):
+    def test_aserial(self):
+        # print("aaa")
+        self.assertEqual(1,1)
+    def test_bmessage_serialize(self):
+        # print("bbb")
         msg = Message("client_ready", None, "my_id")
         rebuilt = Message.unserialize(msg.serialize())
         self.assertEqual(msg.type, rebuilt.type)
         self.assertEqual(msg.data, rebuilt.data)
         self.assertEqual(msg.node_id, rebuilt.node_id)
+    def test_dfail(self):
+        # print("ccc")
+        self.assertEqual(1,1)
+
+if __name__ == '__main__':
+    suite1 = unittest.TestLoader().loadTestsFromTestCase(TestMessageSerializing)
+    # suite2 = unittest.TestLoader().loadTestsFromTestCase(TestMessageSerializing)
+    suite = unittest.TestSuite([suite1,])
+    unittest.TextTestRunner().run(suite)
