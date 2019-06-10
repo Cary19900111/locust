@@ -12,3 +12,6 @@ dist/**
 build/
 .coverage
 .tox/
+/bin
+/include
+/lib
