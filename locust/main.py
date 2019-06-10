@@ -402,7 +402,6 @@ def load_locustfile(path):
 
 def main():
     parser, options, arguments = parse_options()
-
     # setup logging
     setup_logging(options.loglevel, options.logfile)
     logger = logging.getLogger(__name__)
@@ -557,5 +556,7 @@ def main():
     except KeyboardInterrupt as e:
         shutdown(0)
 
+def crmain():
+    console_logger.info("ffdsfsd")
 if __name__ == '__main__':
     main()

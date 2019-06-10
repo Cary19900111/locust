@@ -64,3 +64,6 @@ class TestTaskRatio(unittest.TestCase):
         unlikely = ratio_dict['UnlikelyLocust']['tasks']
         likely = ratio_dict['MoreLikelyLocust']['tasks']
         assert unlikely['task1']['ratio'] + unlikely['task3']['ratio'] + likely['task1']['ratio'] + likely['task3']['ratio'] == 1
+
+if __name__=="__main__":
+    unittest.main()
